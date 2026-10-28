@@ -176,6 +176,8 @@ textarea:focus{border-color:var(--champagne);background:rgba(253,255,247,.06)}
 .hero2 .rv{transition-duration:1.5s}
 .bar{transition:opacity .6s,background .5s,backdrop-filter .5s,border-color .5s}
 .bar.hide{opacity:0;pointer-events:none}
+.prop{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(18px,1.6vw,21px);line-height:1.7;color:rgba(253,255,247,.82);margin:-4px 0 34px;max-width:560px}
+.prop::first-letter{color:#d98d5f}
 </style>
 </head>
 <body>
@@ -196,6 +198,7 @@ const CONFIG = {
       titulo: "CASA SALES · 24.10",
       arquivo: "video-01.mp4",
       capa:    "capa-01.jpg",
+      proposta: "Usar as falas da família e assessora para \"narrar\" o dia, enquanto mostra o espaço tecido da emoção e satisfação de cada uma, contando uma história natural, espontânea e de forma indireta, mostrar a beleza do evento e espaço",
       legenda: "Tem noite que a gente fotografa e tem noite que a gente sente. Essa foi as duas. ❤️\n\nO vestido rodando no salão\nA mãe enxugando o olho no canto\nO pai tentando disfarçar a emoção no discurso...\n\nE, no meio de tudo isso, um espaço que não competiu com a festa, só fez ela ficar maior ✨\n\nObrigada, [família], por confiar em nós para um dos dias mais importantes da vida de vocês. 🥂"
     }
   ]
@@ -261,6 +264,7 @@ CONFIG.VIDEOS.forEach((v,i)=>{
   <div class="info">
     <p class="tag rv">Vídeo ${n}</p>
     <h2 class="rv d1">${esc(v.titulo)}</h2>
+    ${v.proposta?`<p class="cap-l rv d1">Proposta</p><p class="prop rv d1">${esc(v.proposta)}</p>`:''}
     <p class="cap-l rv d1">Legenda</p>
     <p class="cap rv d2">${esc(v.legenda)}</p>
     <div class="choice rv d3">
